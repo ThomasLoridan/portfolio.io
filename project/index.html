@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thomas Loridan — Engineer the intelligence, ship the product</title>
+  <meta name="description" content="Thomas Loridan — Technical Product Manager, AI Engineer, and TPM. Specs, code, and the occasional manifesto." />
+  <link rel="icon" type="image/png" href="assets/profile.png" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Resources referenced as strings in JSX — listed here so the bundler can inline them -->
+  <meta name="ext-resource-dependency" content="assets/profile.png" data-resource-id="profile" />
+  <meta name="ext-resource-dependency" content="assets/devoteam.gif" data-resource-id="devoteam" />
+  <meta name="ext-resource-dependency" content="assets/amazon.gif" data-resource-id="amazon" />
+  <meta name="ext-resource-dependency" content="assets/auchan.gif" data-resource-id="auchan" />
+  <meta name="ext-resource-dependency" content="assets/loreal.gif" data-resource-id="loreal" />
+  <meta name="ext-resource-dependency" content="assets/sonar.jpg" data-resource-id="sonar" />
+  <meta name="ext-resource-dependency" content="assets/oracle.webp" data-resource-id="oracle" />
+  <meta name="ext-resource-dependency" content="assets/tennis.jpg" data-resource-id="tennis" />
+  <meta name="ext-resource-dependency" content="assets/asimov.jpg" data-resource-id="asimov" />
+  <meta name="ext-resource-dependency" content="assets/dune.jpg" data-resource-id="dune" />
+  <meta name="ext-resource-dependency" content="assets/aktionnaire.png" data-resource-id="aktionnaire" />
+  <meta name="ext-resource-dependency" content="assets/diary-ceo.jpg" data-resource-id="diaryceo" />
+  <meta name="ext-resource-dependency" content="assets/claude.png" data-resource-id="claude" />
+  <meta name="ext-resource-dependency" content="assets/google.png" data-resource-id="credGoogle" />
+  <meta name="ext-resource-dependency" content="assets/aws.png" data-resource-id="credAws" />
+  <meta name="ext-resource-dependency" content="assets/amazon-icon.png" data-resource-id="credAmazon" />
+  <meta name="ext-resource-dependency" content="assets/mckinsey.webp" data-resource-id="credMckinsey" />
+  <meta name="ext-resource-dependency" content="assets/forage.png" data-resource-id="credForage" />
+  <meta name="ext-resource-dependency" content="assets/loreal-logo.png" data-resource-id="credLoreal" />
+  <meta name="ext-resource-dependency" content="assets/logos/r.png" data-resource-id="logoR" />
+  <meta name="ext-resource-dependency" content="assets/logos/powerbi.png" data-resource-id="logoPowerbi" />
+  <meta name="ext-resource-dependency" content="assets/logos/quicksight.png" data-resource-id="logoQuicksight" />
+  <meta name="ext-resource-dependency" content="assets/logos/excel.png" data-resource-id="logoExcel" />
+  <meta name="ext-resource-dependency" content="assets/logos/jira.png" data-resource-id="logoJira" />
+  <meta name="ext-resource-dependency" content="assets/logos/confluence.png" data-resource-id="logoConfluence" />
+  <meta name="ext-resource-dependency" content="assets/logos/salesforce.png" data-resource-id="logoSalesforce" />
+  <meta name="ext-resource-dependency" content="assets/logos/ppt.png" data-resource-id="logoPpt" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#FFFFFF"/>
+      <g transform="translate(600,400)">
+        <circle cx="0" cy="0" r="170" fill="none" stroke="#E8E6E2" stroke-width="1"/>
+        <circle cx="0" cy="0" r="110" fill="none" stroke="#E8E6E2" stroke-width="1"/>
+        <circle cx="-160" cy="-60" r="34" fill="#FFFFFF" stroke="#E8E6E2" stroke-width="1"/>
+        <circle cx="170" cy="-30" r="40" fill="#FFFFFF" stroke="#E8E6E2" stroke-width="1"/>
+        <circle cx="-120" cy="120" r="28" fill="#FFFFFF" stroke="#E8E6E2" stroke-width="1"/>
+        <circle cx="140" cy="130" r="32" fill="#FFFFFF" stroke="#E8E6E2" stroke-width="1"/>
+        <text x="0" y="6" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="42" fill="#0A2E5C">
+          Thomas <tspan fill="#2E7DE9">Loridan</tspan>
+        </text>
+      </g>
+    </svg>
+  </template>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    // Map original asset paths to bundler resource IDs.
+    // R(path) returns the blob URL if the bundler inlined the asset, otherwise the original path.
+    window.__assetMap = {
+      "assets/profile.png": "profile",
+      "assets/devoteam.gif": "devoteam",
+      "assets/amazon.gif": "amazon",
+      "assets/auchan.gif": "auchan",
+      "assets/loreal.gif": "loreal",
+      "assets/sonar.jpg": "sonar",
+      "assets/oracle.webp": "oracle",
+      "assets/tennis.jpg": "tennis",
+      "assets/asimov.jpg": "asimov",
+      "assets/dune.jpg": "dune",
+      "assets/aktionnaire.png": "aktionnaire",
+      "assets/diary-ceo.jpg": "diaryceo",
+      "assets/claude.png": "claude",
+      "assets/google.png": "credGoogle",
+      "assets/aws.png": "credAws",
+      "assets/amazon-icon.png": "credAmazon",
+      "assets/mckinsey.webp": "credMckinsey",
+      "assets/forage.png": "credForage",
+      "assets/loreal-logo.png": "credLoreal",
+      "assets/logos/r.png": "logoR",
+      "assets/logos/powerbi.png": "logoPowerbi",
+      "assets/logos/quicksight.png": "logoQuicksight",
+      "assets/logos/excel.png": "logoExcel",
+      "assets/logos/jira.png": "logoJira",
+      "assets/logos/confluence.png": "logoConfluence",
+      "assets/logos/salesforce.png": "logoSalesforce",
+      "assets/logos/ppt.png": "logoPpt"
+    };
+    window.R = function (path) {
+      if (!path) return path;
+      var id = window.__assetMap[path];
+      if (id && window.__resources && window.__resources[id]) return window.__resources[id];
+      return path;
+    };
+  </script>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script src="i18n.js"></script>
+  <script type="text/babel" src="bubbles.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>

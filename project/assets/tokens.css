@@ -1,0 +1,186 @@
+/* ============================================
+   Thomas Loridan — Design Tokens
+   Two contexts: (A) Web/App  (B) Slides/Decks
+   ============================================ */
+
+/* ---- Fonts (Google Fonts substitutions; flagged in README) ---- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap');
+
+:root {
+  /* ---------- BACKGROUND ---------- */
+  --bg-primary:   #FFFFFF;   /* default white */
+  --bg-paper:     #F2EFE9;   /* alt sections, footers */
+
+  /* ---------- INK SCALE ---------- */
+  --fg-1:         #1A1A1A;   /* primary text */
+  --fg-2:         #5A5A5A;   /* secondary text */
+  --fg-3:         #A8A8A8;   /* tertiary text, captions */
+  --fg-border:    #E8E6E2;   /* hairlines, dividers */
+
+  /* ---------- ACCENT ---------- */
+  --navy:         #0A2E5C;   /* authority / structure / action titles */
+  --blue:         #2E7DE9;   /* data highlight / italic accents / CTAs */
+  --brass:        #B8924A;   /* rare strategic signal — exceptional delta */
+
+  /* ---------- SEMANTIC ---------- */
+  --success:      #1A7040;
+  --danger:       #B8291A;
+
+  /* ---------- TYPOGRAPHY FAMILIES ---------- */
+  --font-serif:   'DM Serif Display', 'Times New Roman', serif;
+  --font-sans:    'Syne', system-ui, -apple-system, sans-serif;
+  --font-mono:    'DM Mono', 'Courier New', monospace;
+
+  /* ---------- TYPE WEIGHTS (Syne) ---------- */
+  --w-regular:    400;
+  --w-semibold:   600;
+  --w-bold:       700;
+
+  /* ---------- BORDER RADIUS ---------- */
+  --r-pill:       100px;     /* nav, buttons */
+  --r-card:       12px;      /* cards */
+  --r-component:  8px;       /* inputs, dropdowns */
+  --r-button:     4px;       /* small buttons, tags */
+
+  /* ---------- SPACING SCALE (8px base) ---------- */
+  --s-1:          4px;
+  --s-2:          8px;
+  --s-3:          16px;
+  --s-4:          24px;
+  --s-5:          40px;
+  --s-6:          64px;
+
+  /* ---------- BORDERS ---------- */
+  --border-hair:  0.5px solid var(--fg-border);
+  --border-thin:  1px solid var(--fg-border);
+
+  /* ---------- MOTION ---------- */
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:     180ms;
+  --dur-base:     320ms;
+  --dur-slow:     560ms;
+}
+
+/* ============================================
+   SEMANTIC TYPE STYLES
+   ============================================ */
+
+.h-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--fg-1);
+}
+.h-display .accent {
+  font-style: italic;
+  color: var(--blue);
+}
+
+.h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--fg-1);
+}
+
+.h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+}
+
+.h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--fg-1);
+}
+
+.body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--fg-1);
+}
+
+.body-sm {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+
+.overline {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.label-mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.stat-numeral {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--blue);
+}
+
+.code,
+code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--bg-paper);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--fg-1);
+}
+
+/* ============================================
+   SLIDE-MODE TOKENS (Mode B)
+   ============================================ */
+.slide-action-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.25;
+  color: #FFFFFF;
+  background: var(--navy);
+  letter-spacing: -0.005em;
+}
+.slide-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--fg-1);
+}
+.slide-source {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--fg-2);
+  background: var(--bg-paper);
+}
