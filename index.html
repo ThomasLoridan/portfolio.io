@@ -1183,7 +1183,6 @@ function Hero({ t }) {
   return (
     <header id="top" className="hero">
       <div className="hero-inner reveal no-anim">
-        <div className="overline hero-overline"><span className="dot">●</span>{t.hero.overline}</div>
         <h1 className="h-display">
           {t.hero.titleA}{" "}
           <span className="accent">{t.hero.titleAccent}</span>
@@ -1277,6 +1276,14 @@ function Stack({ t }) {
   );
 }
 
+const TAG_COLORS = {
+  "Devoteam":  "#2E7DE9",
+  "Amazon":    "#3B2314",
+  "Famyliad":  "#5C0A40",
+  "Auchan":    "#0A2E5C",
+  "L'Oréal":  "#1A1A1A",
+};
+
 const COMPANY_MEDIA = {
   "Devoteam": { src: "assets/devoteam.gif", contain: false },
   "Amazon": { src: "assets/amazon.gif", contain: false },
@@ -1308,7 +1315,13 @@ function Experience({ t }) {
                 <div className="role">{r.role}</div>
                 {r.desc && <p className="role-desc">{r.desc}</p>}
                 <div style={{ display: "flex", gap: 6, marginTop: 6 }}>
-                  <span className={`tag ${i === 0 ? "blue" : "navy"}`}>{r.tag}</span>
+                  <span style={{
+                    display: "inline-flex", alignItems: "center",
+                    padding: "5px 14px", borderRadius: "100px",
+                    background: TAG_COLORS[r.company] || "#1A1A1A",
+                    color: "#fff", fontFamily: "var(--font-sans)",
+                    fontSize: "13px", fontWeight: 500, letterSpacing: "0.01em"
+                  }}>{r.tag}</span>
                 </div>
               </div>
               <div className={`tl-media ${media.contain ? "contain" : ""}`}>
